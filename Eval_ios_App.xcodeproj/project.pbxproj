@@ -26,7 +26,7 @@
 		EBCC258D2240E4C100D6F18E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBCC25932240F31700D6F18E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EBCC25952240FC3B00D6F18E /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pizza.swift; path = Models/Pizza.swift; sourceTree = "<group>"; };
-		EBCC25972240FD3000D6F18E /* PizzaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PizzaService.swift; path = Models/PizzaService.swift; sourceTree = "<group>"; };
+		EBCC25972240FD3000D6F18E /* PizzaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaService.swift; sourceTree = "<group>"; };
 		EBCC259B2241151300D6F18E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,8 +66,8 @@
 				EBCC258A2240E4C100D6F18E /* LaunchScreen.storyboard */,
 				EBCC258D2240E4C100D6F18E /* Info.plist */,
 				EBCC25932240F31700D6F18E /* ListViewController.swift */,
-				EBCC25952240FC3B00D6F18E /* Pizza.swift */,
 				EBCC25972240FD3000D6F18E /* PizzaService.swift */,
+				EBCC25952240FC3B00D6F18E /* Pizza.swift */,
 				EBCC259B2241151300D6F18E /* SearchViewController.swift */,
 			);
 			path = Eval_ios_App;

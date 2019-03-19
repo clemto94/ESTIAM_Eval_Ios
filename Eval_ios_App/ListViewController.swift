@@ -13,6 +13,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        PizzaService.shared.getAllPizza()
         // Do any additional setup after loading the view.
     }
     // Ajouter les données dans la table view avant que la vue arrive à l'écrant

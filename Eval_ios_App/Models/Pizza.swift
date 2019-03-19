@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Pizza {
+struct Pizza: Decodable {
     var name = ""
     var ingredients: [String]
 }
