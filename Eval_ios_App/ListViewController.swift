@@ -33,6 +33,7 @@ extension ListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PizzaCell", for: indexPath)
         let pizza = PizzaService.shared.pizzas[indexPath.row]
         cell.textLabel?.text = pizza.name
+        // forme le tableau de string en string
         var ingredientsStringFormated = ""
         for ingredient in pizza.ingredients {
             ingredientsStringFormated = "\(ingredient) " + ingredientsStringFormated

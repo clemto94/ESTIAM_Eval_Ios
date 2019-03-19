@@ -18,11 +18,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
@@ -30,7 +28,7 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
+        if searching && searchedPizza.count > 0 {
             return searchedPizza.count
         } else {
             return PizzaService.shared.pizzas.count
@@ -39,7 +37,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell",  for: indexPath)
-        if searching {
+        if searching && searchedPizza.count > 0 {
             let pizza = searchedPizza[indexPath.row]
             cell.textLabel?.text = pizza.name
             var ingredientsStringFormated = ""
@@ -47,7 +45,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
                 ingredientsStringFormated = "\(ingredient) " + ingredientsStringFormated
             }
             cell.detailTextLabel?.text = ingredientsStringFormated
-            // cell.textLabel?.text = searchedPizza[indexPath.row].name
         } else {
             let pizza = PizzaService.shared.pizzas[indexPath.row]
             cell.textLabel?.text = pizza.name
@@ -56,7 +53,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
                 ingredientsStringFormated = "\(ingredient) " + ingredientsStringFormated
             }
             cell.detailTextLabel?.text = ingredientsStringFormated
-            // cell?.textLabel?.text = countryNameArr[indexPath.row]
         }
         return cell
     }
@@ -67,7 +63,6 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchedPizza = []
         for pizza in PizzaService.shared.pizzas {
-            //searchedIngredients = pizza.ingredients.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
             searchedIngredients = pizza.ingredients.filter({(ingredient: String) -> Bool in
                 if ingredient.lowercased().prefix(searchText.count) == searchText.lowercased() && searchText != "" {
                     if !searchedPizza.contains(where: {$0.name == pizza.name})
@@ -90,8 +85,4 @@ extension SearchViewController: UISearchBarDelegate {
         view.endEditing(false)
         resultTableView.reloadData()
     }
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        view.endEditing(true)
-//        super.touchesBegan(touches, with: event)
-//    }
 }
