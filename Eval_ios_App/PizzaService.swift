@@ -27,9 +27,6 @@ class PizzaService {
                         self.pizzas = pizzasRespons
                         print(pizzasRespons)
                     }
-                        // let author = responseJSON["quoteAuthor"] {
-                        // getImage() // Une fois la citation reçue, on va chercher l'image
-                    //}
                 }
             }
         }
